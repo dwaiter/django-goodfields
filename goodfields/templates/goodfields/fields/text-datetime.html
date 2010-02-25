@@ -1,0 +1,32 @@
+<div class="split-datetime-field">
+    {{ field.errors }}
+    
+    <div class="field split-datetime-date-field">
+        <label for="{{ field.auto_id }}_0">{% firstof label field.label %} Date</label>
+        <input type="text" class="text" id="{{ field.auto_id }}_0" 
+               name="{{ field.html_name }}_0"
+               value="{% if initial_date %}{{ initial_date }}{% endif %}" />
+
+    </div>
+
+    <div class="field split-datetime-time-field">
+        <label for="{{ field.auto_id }}_1">{% firstof label field.label %} Time</label>
+        <input type="text" class="text" id="{{ field.auto_id }}_1" 
+               name="{{ field.html_name }}_1"
+               value="{% if initial_time %}{{ initial_time }}{% endif %}" />
+    </div>
+
+    {% if field.help_text %}
+        <p class="form-help-text">{{ field.help_text }}</p>
+    {% endif %}
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('#{{ field.auto_id }}_0').datepicker({
+            dateFormat: 'yy-mm-dd',
+            minDate: '-0d',
+            firstDay: 1
+        });
+    });
+</script>

@@ -1,0 +1,10 @@
+<li>
+    <label>
+        <input id="{{ field.auto_id }}" type="checkbox" class="checkbox"
+               name="{{ field.html_name }}"
+               {% if checked %}checked="checked"{% endif %} />
+        {% firstof label field.label %}
+        {{ field.errors }}
+        <span class="form-help-text">{{ field.help_text }}</span>
+    </label>
+</li>

@@ -1,0 +1,21 @@
+{% include "goodfields/fields/validation.html" %}
+
+<div class="field">
+    <label for="{{ field.auto_id }}">{% firstof label field.label %} {{ field.errors }}</label>
+    <input type="text" class="text" id="{{ field.auto_id }}" 
+           name="{{ field.html_name }}"
+           value="{% if initial %}{{ initial }}{% endif %}" />
+    {% if field.help_text %}
+        <p class="form-help-text">{{ field.help_text }}</p>
+    {% endif %}
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#{{ field.auto_id }}').datepicker({
+            dateFormat: 'yy-mm-dd',
+            minDate: '-0d',
+            firstDay: 1
+        });
+    });
+</script>

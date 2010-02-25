@@ -1,0 +1,12 @@
+{% include "goodfields/fields/validation.html" %}
+
+<div class="field" id="{{ field.auto_id }}-container">
+    <label for="{{ field.auto_id }}">{% firstof label field.label %}</label>
+    <input type="text" class="text" id="{{ field.auto_id }}" 
+           name="{{ field.html_name }}"
+           value="{% if initial %}{{ initial }}{% endif %}" />
+    {{ field.errors }}
+    {% if field.help_text %}
+        <p class="form-help-text">{{ field.help_text }}</p>
+    {% endif %}
+</div>
