@@ -1,4 +1,7 @@
-{% include "goodfields/fields/validation.html" %}
+{% if validate %}
+{% include "goodfields/fields/validation.html" %}   
+{% endif %}
+
 
 <div class="field" id="{{ field.auto_id }}-container">
     <label for="{{ field.auto_id }}">{% firstof label field.label %}</label>
