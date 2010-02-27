@@ -2,7 +2,7 @@ from django import template
 from django.conf import settings
 from django.template.loader import render_to_string
 
-validate = (hasattr(settings, 'GOODFIELD_VALIDATION') and settings.GOODFIELD_VALIDATION)
+validate = (hasattr(settings, 'GOODFIELDS_VALIDATE') and settings.GOODFIELDS_VALIDATE)
 register = template.Library()
 
 class GoodfieldNode(template.Node):
