@@ -6,7 +6,7 @@
             <input type="radio" class="radio"
                    name="{{ field.html_name }}"
                    value="{{ choice.0 }}"
-                   {% ifequal selected choice.0 %}checked="checked"{% endifequal %} />
+                   {% ifequal initial choice.0 %}checked="checked"{% endifequal %} />
             {{ choice.1 }}
             </label>
         </li>
