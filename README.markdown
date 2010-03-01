@@ -10,12 +10,16 @@ Requirements
 
 Field rendering only:
 
-* Django 1.1+
+* [Django][] 1.1+
 
 Inline validation:
 
-* jQuery
-* LiveValidation
+* [jQuery][]
+* [LiveValidation][]
+
+[Django]: http://djangoproject.com/
+[jQuery]: http://jquery.com/
+[LiveValidation]: http://livevalidation.com/
 
 Installation
 ------------
@@ -102,4 +106,10 @@ particular rendering of a field by using `label "new label"` in the
 
 Usage (Inline Validation)
 -------------------------
+
+django-goodfields can automatically add some sane inline validation to
+rendered form fields by looking at attributes of your Django fields.
+
+To use this you'll first need to include the [jQuery][] and [LiveValidation][]
+libraries somewhere in your pages.
 
