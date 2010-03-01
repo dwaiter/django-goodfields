@@ -11,8 +11,8 @@ setup(
     version='0.0.1',
     description=description,
     long_description=long_description,
-    author='Steve Losh',
-    author_email='steve@stevelosh.com',
+    author='Dumbwaiter Design',
+    author_email='dev@dwaiter.com',
     url='http://bitbucket.org/dwaiter/django-goodfields/',
     packages=find_packages(),
     classifiers=[
