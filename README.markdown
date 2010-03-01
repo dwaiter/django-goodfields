@@ -28,7 +28,12 @@ Installation
     
     pip install -e git://github.com/dwaiter/django-goodfields@stable#egg=django-goodfields
 
-### From Source
+Now symlink (or copy) the templates and media into your project:
+
+    ln -s /path/to/django-goodfields/goodfields/templates/goodfields/ templates/goodfields
+    ln -s /path/to/django-goodfields/goodfields/media/goodfields/ media/goodfields
+
+### Or From Source
 
 Get the code:
 
@@ -45,13 +50,13 @@ Install:
     cd django-goodfields
     python setup.py install
 
-Usage
------
+Now symlink the templates and media into your project:
 
-django-goodfields can help you render nice form fields, and optionally add
-inline validation with Javascript.
+    ln -s /path/to/django-goodfields/goodfields/templates/goodfields/ templates/goodfields
+    ln -s /path/to/django-goodfields/goodfields/media/goodfields/ media/goodfields
 
-### Field Rendering
+Usage (Field Rendering)
+-----------------------
 
 Use the `{% goodfield [form.field] [field type] %}` template tag to render
 fields in your form:
@@ -81,8 +86,19 @@ looks similar to this:
     </div>
 
 Feel free to customize the templates to look however you prefer. Each field
-type (`text`, `password`, `radio`, etc) has its own template. You can add new
-field types by adding new templates.
+type (`text`, `password`, `radio`, etc) has its own template in
+templates/goodfields. You can add new field types by adding new templates.
+
+django-goodfields will use the `label` attribute of the form field to create
+the `<label>` element by default. You can specify a custom label for a
+particular rendering of a field by using `label "new label"` in the
+`{% goodfield %}` tag, like this:
+
+    <form action="" method="post">
+        {% load goodfields %}
+        {% goodfield form.password password label "Pick a secure password!" %}
+        <input type="submit" value="Sign Up" />
+    </form>
 
 Usage (Inline Validation)
 -------------------------
