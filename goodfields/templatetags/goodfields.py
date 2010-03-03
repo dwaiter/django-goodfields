@@ -9,7 +9,7 @@ class GoodfieldNode(template.Node):
     def __init__(self, field, field_type, label=None, validation=None):
         self.field = template.Variable(field)
         self.field_type = field_type.strip('"')
-        self.label = label.strip('"') if label else None
+        self.label = label.strip('"') if label else field.label
         self.validation = validation
     
     def render(self, context):
