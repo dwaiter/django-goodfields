@@ -9,20 +9,21 @@ class GoodfieldNode(template.Node):
     def __init__(self, field, field_type, label=None, validation=None):
         self.field = template.Variable(field)
         self.field_type = field_type.strip('"')
-        self.label = label.strip('"') if label else field.label
+        self.label = label.strip('"') if label else None
         self.validation = validation
     
     def render(self, context):
         field = self.field.resolve(context)
         f = field.form
         initial = field.data if f.data else f.initial.get(field.name, '')
+        label = self.label or field.label
         
         template = "goodfields/fields/%s.html" % self.field_type
         
         return render_to_string(template, {
             'field': field,
             'initial': initial,
-            'label': self.label,
+            'label': label,
             'validation': self.validation,
             'validate': validate,
         })
