@@ -32,9 +32,8 @@ Installation
     
     pip install -e git://github.com/dwaiter/django-goodfields@stable#egg=django-goodfields
 
-Now symlink (or copy) the templates and media into your project:
+Now symlink (or copy) the media into your project:
 
-    ln -s /path/to/django-goodfields/goodfields/templates/goodfields/ templates/goodfields
     ln -s /path/to/django-goodfields/goodfields/media/goodfields/ media/goodfields
 
 ### Or From Source
@@ -54,9 +53,8 @@ Install:
     cd django-goodfields
     python setup.py install
 
-Now symlink the templates and media into your project:
+Now symlink (or copy) the media into your project:
 
-    ln -s /path/to/django-goodfields/goodfields/templates/goodfields/ templates/goodfields
     ln -s /path/to/django-goodfields/goodfields/media/goodfields/ media/goodfields
 
 Usage (Field Rendering)
