@@ -6,10 +6,11 @@ validate = (hasattr(settings, 'GOODFIELDS_VALIDATE') and settings.GOODFIELDS_VAL
 register = template.Library()
 
 class GoodfieldNode(template.Node):
-    def __init__(self, field, field_type, label=None, validation=None):
+    def __init__(self, field, field_type, label=None, cls='', validation=None):
         self.field = template.Variable(field)
         self.field_type = field_type.strip('"')
         self.label = label.strip('"') if label else None
+        self.cls = cls.strip('\'"')
         self.validation = validation
     
     def render(self, context):
@@ -24,6 +25,7 @@ class GoodfieldNode(template.Node):
             'field': field,
             'initial': initial,
             'label': label,
+            'class': self.cls,
             'validation': self.validation,
             'validate': validate,
         })
@@ -50,6 +52,8 @@ def goodfield(parser, token):
     for bit in bits:
         if bit == 'label':
             kwargs['label'] = bits.next()
+        if bit == 'class':
+            kwargs['cls'] = bits.next()
         if bit == 'email':
             kwargs['validation']['email'] = True
         if bit == 'pattern':
