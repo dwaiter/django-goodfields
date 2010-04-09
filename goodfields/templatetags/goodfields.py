@@ -8,8 +8,8 @@ register = template.Library()
 class GoodfieldNode(template.Node):
     def __init__(self, field, field_type, label=None, cls='', validation=None):
         self.field = template.Variable(field)
-        self.field_type = field_type.strip('"')
-        self.label = label.strip('"') if label else None
+        self.field_type = field_type.strip('\'"')
+        self.label = label.strip('\'"') if label else None
         self.cls = cls.strip('\'"')
         self.validation = validation
     
