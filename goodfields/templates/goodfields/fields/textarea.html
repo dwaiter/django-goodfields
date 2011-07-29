@@ -1,9 +1,4 @@
-{% if validate %}
-{% include "goodfields/fields/validation.html" %}   
-{% endif %}
-
-
-<div class="field" id="{{ field.auto_id }}-container">
+<div class="{{ class }} field" id="{{ field.auto_id }}-container">
     <label for="{{ field.auto_id }}">{% firstof label field.label %} {{ field.errors }}</label>
     <textarea id="{{ field.auto_id }}" rows="8"
               name="{{ field.html_name }}">{% if initial %}{{ initial }}{% endif %}</textarea>

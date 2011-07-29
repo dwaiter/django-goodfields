@@ -1,9 +1,4 @@
-{% if validate %}
-{% include "goodfields/fields/validation.html" %}   
-{% endif %}
-
-
-<div class="field" id="{{ field.auto_id }}-container">
+<div class="{{ class }} field" id="{{ field.auto_id }}-container">
     <label for="{{ field.auto_id }}">{% firstof label field.label %}</label>
     <input type="text" class="text" id="{{ field.auto_id }}" 
            name="{{ field.html_name }}"

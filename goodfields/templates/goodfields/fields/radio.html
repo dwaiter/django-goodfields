@@ -1,17 +1,19 @@
-<label>{{ label }} {{ field.errors }}</label>
-<ul class="fields">
-    {% for choice in field.field.choices %}
-        <li>
-            <label>
-            <input type="radio" class="radio"
-                   name="{{ field.html_name }}"
-                   value="{{ choice.0 }}"
-                   {% ifequal initial choice.0 %}checked="checked"{% endifequal %} />
-            {{ choice.1 }}
-            </label>
-        </li>
-    {% endfor %}
-</ul>
-{% if field.help_text %}
-    <p class="form-help-text">{{ field.help_text }}</p>
-{% endif %}
+<div class="{{ class }}">
+    <label>{{ label }} {{ field.errors }}</label>
+    <ul class="fields">
+        {% for choice in field.field.choices %}
+            <li>
+                <label>
+                <input type="radio" class="radio"
+                       name="{{ field.html_name }}"
+                       value="{{ choice.0 }}"
+                       {% ifequal initial choice.0 %}checked="checked"{% endifequal %} />
+                {{ choice.1 }}
+                </label>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if field.help_text %}
+        <p class="form-help-text">{{ field.help_text }}</p>
+    {% endif %}
+</div>
