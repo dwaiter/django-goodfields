@@ -4,10 +4,13 @@ django-goodfields
 Customizing the markup of Django forms is a pain. django-goodfields tries to
 make it hurt less by making it easy to render form fields.
 
+* Mercurial repo: <http://bitbucket.org/dwaiter/django-goodfields/>
+* Git repo: <http://github.com/dwaiter/django-goodfields/>
+* Issues: <http://github.com/dwaiter/django-goodfields/issues/>
+* License: MIT/X11
+
 Requirements
 ------------
-
-Field rendering only:
 
 * [Django][] 1.1+
 
@@ -24,6 +27,7 @@ Installation
 
 Now copy the sample templates into your project:
 
+    cd yourproject
     cp -R /path/to/django-goodfields/goodfields/templates/goodfields/ templates/goodfields
 
 ### Or From Source
@@ -41,6 +45,7 @@ Install:
 
 Now copy the sample templates into your project:
 
+    cd yourproject
     cp -R /path/to/django-goodfields/goodfields/templates/goodfields/ templates/goodfields
 
 Usage (Field Rendering)
@@ -95,3 +100,4 @@ classes:
     {% goodfield form.email text class "full-column" %}
     {% goodfield form.first_name text class "half-column" %}
     {% goodfield form.last_name text class "half-column" %}
+
